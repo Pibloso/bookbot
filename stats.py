@@ -4,9 +4,7 @@ def word_count(text):
 
 def letter_count(text):
     letter_dict = {}
-    words = text.split()
-    for word in words:
-        letters = list(word)
-        for letter in letters:
-            letter_dict[letter] += 1
+    letters = list(text)
+    for letter in letters:
+        letter_dict[letter.lower()] = letter_dict.setdefault(letter.lower(),0) + 1
     return letter_dict
